@@ -26,4 +26,14 @@ public class EmpPayrollMySQL {
     select min(salary) from employee_payroll where gender = 'M' group by gender;
     select max(salary) from employee_payroll where gender = 'M' group by gender;
     select count(salary) from employee_payroll where gender = 'M' group by gender;
+    //UC8
+    alter table employee_payroll add column phone int;
+    alter table employee_payroll add column address varchar(40);
+    alter table employee_payroll add column department varchar(20);
+    //UC9
+    alter table employee_payroll add column Basic_Pay int, add column Deductions int,add column Taxable_Pay int,add column Income_Tax int,add column Net_Pay int;
+    //UC10
+    insert into employee_payroll(name,salary,start_date,gender,phone,address,department,Basic_Pay,Deductions,Taxable_Pay,Income_Tax,Net_Pay) values("Terrisa",4000,"2021-11-21",'F',94942122,"Hyd",'Sales',4000,200,1000,300,2700);
+    insert into employee_payroll(name,salary,start_date,gender,phone,address,department,Basic_Pay,Deductions,Taxable_Pay,Income_Tax,Net_Pay) values("Terrisa",4000,"2021-11-21",'F',94942122,"Hyd",'Sales',4000,200,1000,300,2700);
+    select * from employee_payroll where name = "Terrisa";
 }
